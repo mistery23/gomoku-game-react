@@ -1,0 +1,13 @@
+@import "../../node_modules/flat-ui/bootstrap/css/bootstrap.css";
+@import "../../node_modules/flat-ui/css/flat-ui.css";
+
+@import "./standarts/variables";
+@import "./standarts/reset";
+
+@import "./pages/app";
+
+@import "./components/square";
+@import "./components/field";
+@import "./components/text";
+@import "./components/button";
+@import "./components/modal";

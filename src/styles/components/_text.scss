@@ -1,0 +1,15 @@
+.text{
+  font-size: $body-font-size;
+  &--error{
+    color: red
+  }
+  &--center{
+    text-align: center;
+  }
+}
+
+.title{
+  font-size: $body-font-size*2;
+  line-height: $body-font-size*2;
+  text-align: center;
+}

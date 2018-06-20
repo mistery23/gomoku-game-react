@@ -1,0 +1,78 @@
+.modal {
+  position: relative;
+  background-color: $bg;
+  color: $color-text;
+  padding: $padding-big;
+  padding-top: 36px;
+  margin-bottom: $padding;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+  max-width: 80%;
+  width: 500px;
+  border-radius: 5px;
+  overflow: hidden;
+  &--large{
+    width: 80%;
+  }
+}
+
+.overlay {
+  height: 100vh;
+  overflow: auto;
+  text-align: center;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba($border, 0.2);
+  padding: $padding;
+  padding-bottom: 0;
+  position: relative;
+
+  &:after {
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    margin-left: -.05em;
+    content: "";
+  }
+}
+
+// Effect
+.ReactModal__Overlay {
+  transition: all .15s ease-in-out;
+  opacity: 0;
+  &--after-open {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  &--before-close{
+    opacity: 0;
+  }
+}
+
+.ReactModal__Content{
+  transition: all .15s ease-in-out;
+  transform: scale(1.2);
+  &--after-open {
+    transform: scale(1);
+  }
+  &--before-close{
+    transform: scale(.8);
+  }
+  &:focus{
+    outline: none;
+  }
+}
+
+.ReactModalPortal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+

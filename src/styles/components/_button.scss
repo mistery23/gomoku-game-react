@@ -1,0 +1,64 @@
+.btn-icon {
+  font-size: $body-font-size;
+  line-height: $body-font-size;
+  color: $color-text;
+  transition: $transition;
+  background-color: transparent;
+  border: none;
+  display: block;
+
+  &--close {
+    position: absolute;
+    top: $padding;
+    right: $padding-sm;
+    z-index: 2;
+  }
+
+  &--has-absolute {
+    width: 20px;
+    text-align: center;
+    position: relative;
+  }
+
+  &:hover, &:focus {
+    color: $color-text-hover;
+  }
+
+  & + .btn-icon {
+    margin-left: $padding;
+  }
+
+  &__content-absolute {
+    transition: $transition;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(0deg);
+
+    &--rotate {
+      transform: translateX(-50%) translateY(-50%) rotate(180deg);
+    }
+  }
+}
+
+.btn {
+  min-width: 250px;
+}
+
+.btn-line {
+  display: flex;
+  justify-content: center;
+
+  &--with-error {
+    position: relative;
+    padding-top: $gutter;
+
+    .text {
+      position: absolute;
+      top: -7px;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
+  }
+}

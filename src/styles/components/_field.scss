@@ -1,0 +1,145 @@
+.input-hidden {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.field {
+  position: relative;
+  margin-bottom: $padding;
+
+  &__input {
+    display: block;
+    width: 100%;
+    font-family: $font-default;
+    border: 1px solid $color-gray;
+    border-radius: $radius;
+    font-weight: 400;
+    font-size: $body-font-size;
+    line-height: $body-font-size + 4;
+    padding: $gutter $gutter/2 $padding-sm;
+    color: $color-text;
+    background-color: transparent;
+    transition: $transition;
+
+    &::placeholder {
+      transition: $transition;
+      color: $color-gray;
+      opacity: 1;
+    }
+
+    &.is-focus, &:focus {
+      border-color: $focus;
+
+      &::placeholder {
+        opacity: 0;
+      }
+
+      & ~ .field {
+        &__label {
+          @extend .is-focus;
+        }
+      }
+    }
+
+    &.is-align-right {
+      text-align: right;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    transition: $transition;
+    font-size: $body-font-size+2;
+    line-height: $body-font-size + 4;
+    left: $gutter/2;
+    // top: 0;
+    top: 14px;
+    color: $color-text;
+    opacity: 1;
+    cursor: text;
+
+    &.is-focus {
+      font-size: $body-font-size - 4px;
+      line-height: $body-font-size;
+      // top: ($padding-sm + 8) * -1;
+      top: 5px;
+      left: $gutter/2;
+      color: $focus;
+    }
+
+    &.is-align-right {
+      left: auto;
+      right: $padding-sm;
+
+      &.is-focus {
+        left: auto;
+        right: 0;
+      }
+    }
+  }
+
+  &--right {
+    .field {
+      &__input, &__label {
+        @extend .is-align-right;
+      }
+    }
+  }
+}
+
+.field-row {
+  margin-left: $grid-gutter-width / 2 * -1;
+  margin-right: $grid-gutter-width / 2 * -1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+
+  .col {
+    padding-left: $grid-gutter-width / 2;
+    padding-right: $grid-gutter-width / 2;
+  }
+}
+
+.field-static {
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+  }
+
+  .field {
+    &__label {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    &__input {
+      border-color: transparent;
+    }
+  }
+}
+
+.field-send {
+  position: relative;
+
+  &__btn {
+    position: absolute;
+    right: $padding-sm;
+    top: 0;
+    z-index: 2;
+  }
+
+  .field__input {
+    padding-right: $padding-sm * 4;
+  }
+}

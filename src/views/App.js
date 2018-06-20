@@ -9,7 +9,7 @@ class App extends Component {
   state = {
     squares: [],
     winner: undefined,
-    winnerNumber: 3,
+    winnerNumber: 5,
     squareType: "cross",
     gamers: {
       cross: {
